@@ -12,4 +12,43 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+ *= require ie8
+ *= require ie9
+ *= require main
+
+
  */
+
+
+.image {
+  height: 4em;
+  margin: 20px;
+}
+
+h3 strong {
+  color: #0091B4 !important;
+  margin: 0px !important;
+}
+
+table th {
+  color: #5B6062 !important;
+  background-color: #F3F3F3 !important;
+  margin-top: 2em !important;
+  border: 1px !important;
+  border-color: #FFFFFF !important;
+}
+
+.subheaders {
+  color: #B0AFAF !important;
+  background-color: #FDFDFD !important;
+
+}
+
+.paragraph {
+  padding: 4em;
+}
+
+table {
+  margin: 4em;
+}

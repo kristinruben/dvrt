@@ -13,3 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require jquery.dropotron.min
+//= require jquery.min
+//= require jquery.scrollex.min
+//= require main
+//= require skel.min
+//= require util
+//= require wice_grid
+
+//= require turbolinks
+
+//= require highcharts/highcharts
+//= require highcharts/highcharts-more
+//= require highcharts/highstock
