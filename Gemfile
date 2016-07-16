@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.2.3'
+gem 'pg'
 gem 'font-awesome-rails'
 gem 'lazy_high_charts'
 gem 'wice_grid', '~> 3.6', '>= 3.6.2'
