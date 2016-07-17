@@ -23,7 +23,7 @@
 
 .image {
   height: 4em;
-  margin: 20px;
+  margin: 10px;
 }
 
 h3 strong {
@@ -34,8 +34,8 @@ h3 strong {
 table th {
   color: #5B6062 !important;
   background-color: #F3F3F3 !important;
-  margin-top: 2em !important;
-  border: 1px !important;
+  margin: 2em !important;
+  border: 1px 1px 1px 1px !important;
   border-color: #FFFFFF !important;
 }
 
@@ -49,6 +49,7 @@ table th {
   padding: 4em;
 }
 
-table {
-  margin: 4em;
+
+body {
+  margin: 4em !important;
 }
