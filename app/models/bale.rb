@@ -1,6 +1,6 @@
 class Bale < ActiveRecord::Base
   validates :index, null: false
-  validates :bale_time_stamp null: false
+  validates :bale_time_stamp, null: false
   validates :tag_sn, null: false
   validates :bale_weight, null: false
   validates :bale_weight_scaled, null: false

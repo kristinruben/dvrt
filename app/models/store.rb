@@ -7,8 +7,4 @@ class Store < ActiveRecord::Base
   validates :num_bales, null: false
   validates :mean_bale_weight, null: false
   validates :square_feet, null: false
-
-  def self.best_recycling_rate_store
-
-  end
 end
