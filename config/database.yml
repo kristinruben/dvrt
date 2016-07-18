@@ -52,4 +52,4 @@ production:
   database: dvrt_production
   username: dvrt
   password: <%= ENV['DVRT_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  url: mysql2://b1765f472f36e2:e3a39db0@us-cdbr-iron-east-04.cleardb.net/heroku_19f6ac9c457664c?reconnect=true
