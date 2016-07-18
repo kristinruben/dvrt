@@ -13,9 +13,11 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require font-awesome.min
  *= require ie8
  *= require ie9
  *= require main
+ *= require c3
 
 
  */
@@ -52,4 +54,12 @@ table th {
 
 body {
   margin: 4em !important;
+}
+
+.bar {
+  display: inline-block;
+  width: 20px;
+  height: 75px;	/* Gets overriden by D3-assigned height below */
+  margin-right: 2px;
+  background-color: teal;
 }

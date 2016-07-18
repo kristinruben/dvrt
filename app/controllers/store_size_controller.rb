@@ -1,0 +1,3 @@
+class StoreSizeController < ApplicationController
+
+end

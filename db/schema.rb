@@ -11,14 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160717165917) do
+ActiveRecord::Schema.define(version: 20160718153054) do
 
-  create_table "store_size", primary_key: "index", force: :cascade do |t|
-    t.integer "store_number", limit: 4, null: false
+  create_table "bales", force: :cascade do |t|
+    t.integer  "index",                      limit: 4
+    t.datetime "bale_time_stamp"
+    t.text     "tag_sn",                     limit: 65535
+    t.integer  "bale_weight",                limit: 4
+    t.integer  "bale_weight_scaled",         limit: 4
+    t.integer  "tag_rf_reads",               limit: 4
+    t.integer  "tag_max_rf_reads",           limit: 4
+    t.float    "total_detection_confidence", limit: 24
+    t.float    "tag_detection_confidence",   limit: 24
+    t.float    "scale_detection_confidence", limit: 24
+    t.text     "goby_sn",                    limit: 65535
+  end
+
+  create_table "store_sizes", force: :cascade do |t|
+    t.integer "index",        limit: 4
+    t.integer "store_number", limit: 4
     t.integer "square_feet",  limit: 4
   end
 
-  add_index "store_size", ["index"], name: "index_UNIQUE", unique: true, using: :btree
-  add_index "store_size", ["store_number"], name: "store_number_UNIQUE", unique: true, using: :btree
+  create_table "stores", force: :cascade do |t|
+    t.integer "index",            limit: 4
+    t.integer "store_number",     limit: 4
+    t.text    "district",         limit: 65535
+    t.text    "store_id",         limit: 65535
+    t.integer "total_weight",     limit: 4
+    t.integer "num_bales",        limit: 4
+    t.integer "mean_bale_weight", limit: 4
+    t.integer "square_feet",      limit: 4
+  end
 
 end

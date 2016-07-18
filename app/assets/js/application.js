@@ -16,13 +16,8 @@
 //= require jquery.dropotron.min
 //= require jquery.min
 //= require jquery.scrollex.min
-//= require main
 //= require skel.min
+//= require main
+//= require d3
+//= require c3
 //= require util
-//= require wice_grid
-
-//= require turbolinks
-
-//= require highcharts/highcharts
-//= require highcharts/highcharts-more
-//= require highcharts/highstock
