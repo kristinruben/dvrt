@@ -104,12 +104,6 @@ h1 {
   line-height: 125%;
 }
 
-.myBarChart {
-  height: 200px;
-  width: 100px;
-}
-
-.myBarChart2 {
-  height: 200px;
-  width: 100px;
+.container {
+  height: 20rem;
 }
