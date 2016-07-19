@@ -1,3 +1,6 @@
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+
 <h3><strong>DIVISION OVERVIEW</strong></h3>
 <h2><strong>Grocery Store Chain - North East Division</strong></h2>
 <p>May 22 - June 19, 2016</p>
@@ -7,86 +10,195 @@
 <tr>
 <th colspan="6"><strong>PERFORMANCE AGAINST BUDGET</strong></th>
 </tr>
-<tr><td colspan="6">
+<tr></tr><tr><td>
+  <div class="rectangle 5u">&nbsp;72%</div><br />
+  <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OF BUDGET THIS PERIOD</h3>
+</td>
+  <td>
+    <canvas id="myBarChart"></canvas>
+    <script>
+    var chart = document.getElementById("myBarChart")
+    var myBarChart = new Chart(chart, {
+      type: 'bar',
+      data: data = {
+        labels: [],
+        datasets: [
+          {
+            label: "ACTUAL",
+            backgroundColor: "#0192B4",
+            borderColor: "#0192B4",
+            borderWidth: 1,
+            hoverBackgroundColor: "#0192B4",
+            hoverBorderColor: "#0192B4",
+            data: [2356],
+          },
+          {
+            label: "BUDGET",
+            backgroundColor: "#C7CDCE",
+            borderColor: "#C7CDCE",
+            borderWidth: 1,
+            hoverBackgroundColor: "#C7CDCE",
+            hoverBorderColor: "#C7CDCE",
+            data: [3012],
+          }
+        ]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero:true
+            }
+          }]
+        }
+      }
+    });
+    </script>
+  </td>
+<td>
+    <canvas id="myBarChart2"></canvas>
+    <script>
+    var chart = document.getElementById("myBarChart2")
+    var myBarChart = new Chart(chart, {
+      type: 'bar',
+      data: data = {
+        labels: [],
+        datasets: [
+          {
+            label: "ACTUAL",
+            backgroundColor: "#0192B4",
+            borderColor: "#0192B4",
+            borderWidth: 1,
+            hoverBackgroundColor: "#0192B4",
+            hoverBorderColor: "#0192B4",
+            data: [2356],
+          },
+          {
+            label: "BUDGET",
+            backgroundColor: "#C7CDCE",
+            borderColor: "#C7CDCE",
+            borderWidth: 1,
+            hoverBackgroundColor: "#C7CDCE",
+            hoverBorderColor: "#C7CDCE",
+            data: [3012],
+          }
+        ]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero:true
+            }
+          }]
+        }
+      }
+    });
+    </script>
+    <br />
+
+</td>
+</tr>
+</table>
+<table border="1" class="8u">
+  <tr>
+<th colspan="4"><strong>PERFORMANCE OVER TIME</strong></th></tr><tr></tr>
+<tr><td>
+  <canvas id="myChart" width="200" height="100"></canvas>
+  <script>
+  var ctx = document.getElementById("myChart");
+  var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      datasets: [
+          {
+              label: "ACTUAL",
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: "#0192B4",
+              borderColor: "#0192B4",
+              borderCapStyle: 'butt',
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: "rgba(75,192,192,1)",
+              pointBackgroundColor: "#fff",
+              pointBorderWidth: 1,
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: "rgba(75,192,192,1)",
+              pointHoverBorderColor: "rgba(220,220,220,1)",
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [12456, 16086, 21579, 17442, 13111, 15568, 24078, 13456, 19086, 20579, 15442, 14111, 25568, 12456, 16086, 21579, 17442, 13111, 15568, 24078, 13456, 19086, 20579, 15442, 14111, 25568],
+          },
+          {
+              label: "BUDGET",
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: "#C7CDCE",
+              borderColor: "#C7CDCE",
+              borderCapStyle: 'butt',
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: "rgba(75,192,192,1)",
+              pointBackgroundColor: "#fff",
+              pointBorderWidth: 1,
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: "rgba(75,192,192,1)",
+              pointHoverBorderColor: "rgba(220,220,220,1)",
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [21456, 26086, 31879, 24842, 26711, 25968, 33078, 22496, 30086, 29579, 24442, 23111, 28568, 21456, 26086, 31879, 24842, 26711, 25968, 33078, 22496, 30086, 29579, 24442, 23111, 28568],
+          },
+          {
+              label: "IDEAL",
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: "#00B4A5",
+              borderColor: "#00B4A5",
+              borderCapStyle: 'butt',
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: "rgba(75,192,192,1)",
+              pointBackgroundColor: "#fff",
+              pointBorderWidth: 1,
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: "rgba(75,192,192,1)",
+              pointHoverBorderColor: "rgba(220,220,220,1)",
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [31456, 36086, 39879, 32842, 33711, 35968, 39078, 42496, 36086, 38579, 34442, 31111, 31568, 31456, 36086, 39879, 32842, 33711, 35968, 39078, 42496, 36086, 38579, 34442, 31111, 31568],
+          }
+      ]
+  },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+  </script>
+<div class="row"><div class="date 1u -3u">2015</div><div class="date 1u -4u">2016</div></div>
 </td></tr>
-<tr>
-<th colspan="4"><strong>PERFORMANCE OVER TIME</strong></th></tr>
-<th colspan="4"></th></tr>
-<tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td><td>Cell 5</td><td>Cell 6</td></tr>
-<tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td><td>Cell 5</td><td>Cell 6</td></tr>
-<tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td><td>Cell 5</td><td>Cell 6</td></tr>
-<tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td><td>Cell 5</td><td>Cell 6</td></tr>
-<tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td><td>Cell 5</td><td>Cell 6</td></tr>
-<tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td><td>Cell 5</td><td>Cell 6</td></tr>
-<tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td><td>Cell 5</td><td>Cell 6</td></tr>
-<tr><td>Cell 1</td><td>Cell 2</td><td>Cell 3</td><td>Cell 4</td><td>Cell 5</td><td>Cell 6</td></tr>
 </table>
 
-<div id="chart">
-  <script>
+<br /><br /><br />
 
-  // var margin = {top: 20, right: 20, bottom: 30, left: 50},
-  //     width = 960 - margin.left - margin.right,
-  //     height = 500 - margin.top - margin.bottom;
-  //
-  // var formatDate = d3.time.format("%d-%b-%y");
-  //
-  // var x = d3.time.scale()
-  //     .range([0, width]);
-  //
-  // var y = d3.scale.linear()
-  //     .range([height, 0]);
-  //
-  // var xAxis = d3.svg.axis()
-  //     .scale(x)
-  //     .orient("bottom");
-  //
-  // var yAxis = d3.svg.axis()
-  //     .scale(y)
-  //     .orient("left");
-  //
-  // var line = d3.svg.line()
-  //     .x(function(d) { return x(d.date); })
-  //     .y(function(d) { return y(d.close); });
-  //
-  // var svg = d3.select("body").append("svg")
-  //     .attr("width", width + margin.left + margin.right)
-  //     .attr("height", height + margin.top + margin.bottom)
-  //   .append("g")
-  //     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-  //
-  // d3.tsv("data.tsv", type, function(error, data) {
-  //   if (error) throw error;
-  //
-  //   x.domain(d3.extent(data, function(d) { return d.date; }));
-  //   y.domain(d3.extent(data, function(d) { return d.close; }));
-  //
-  //   svg.append("g")
-  //       .attr("class", "x axis")
-  //       .attr("transform", "translate(0," + height + ")")
-  //       .call(xAxis);
-  //
-  //   svg.append("g")
-  //       .attr("class", "y axis")
-  //       .call(yAxis)
-  //     .append("text")
-  //       .attr("transform", "rotate(-90)")
-  //       .attr("y", 6)
-  //       .attr("dy", ".71em")
-  //       .style("text-anchor", "end")
-  //       .text("Price ($)");
-  //
-  //   svg.append("path")
-  //       .datum(data)
-  //       .attr("class", "line")
-  //       .attr("d", line);
-  // });
-  //
-  // function type(d) {
-  //   d.date = formatDate.parse(d.date);
-  //   d.close = +d.close;
-  //   return d;
-  // }
 
-  </script>
+
+<br />
+
+
+<p></p>
+
 </div>

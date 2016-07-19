@@ -1,5 +1,5 @@
 /*
-	Iconic by Pixelarity
+	Elemental by Pixelarity
 	pixelarity.com | hello@pixelarity.com
 	License: pixelarity.com/license
 */
@@ -7,45 +7,70 @@
 (function($) {
 
 	skel.breakpoints({
-		wide: '(max-width: 1680px)',
-		normal: '(max-width: 1280px)',
-		narrow: '(max-width: 980px)',
-		narrower: '(max-width: 840px)',
-		mobile: '(max-width: 736px)'
+		xlarge:  '(max-width: 1680px)',
+		large:   '(max-width: 1280px)',
+		medium:  '(max-width: 980px)',
+		small:   '(max-width: 736px)',
+		xsmall:  '(max-width: 480px)',
+		xxsmall: '(max-width: 360px)'
 	});
 
 	$(function() {
 
 		var	$window = $(window),
-			$body = $('body');
+			$body = $('body'),
+			$header = $('#header'),
+			$main = $('#main');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				window.setTimeout(function() {
+					$body.removeClass('is-loading');
+				}, 100);
+			});
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
 
-		// Prioritize "important" elements on mobile.
-			skel.on('+narrower -narrower', function() {
+		// Prioritize "important" elements on medium.
+			skel.on('+medium -medium', function() {
 				$.prioritize(
-					'.important\\28 narrower\\29',
-					skel.breakpoint('narrower').active
+					'.important\\28 medium\\29',
+					skel.breakpoint('medium').active
 				);
 			});
 
 		// Dropdowns.
 			$('#nav > ul').dropotron({
-				baseZIndex: 10000,
-				offsetY: -16,
-				offsetX: -1,
-				mode: 'fade',
-				noOpenerFade: true
+				alignment: 'center',
+				openerActiveClass: 'dropotron-active'
 			});
+
+		// Header.
+			if (skel.vars.IEVersion < 9)
+				$header.removeClass('alt');
+
+			if ($header.hasClass('alt')) {
+
+				$window.on('resize', function() { $window.trigger('scroll'); });
+
+				$main.scrollex({
+					mode:		'top',
+					top:		'40vh',
+					enter:		function() { $header.removeClass('alt'); },
+					leave:		function() { $header.addClass('alt'); $header.addClass('reveal'); }
+				});
+
+			}
 
 		// Off-Canvas Navigation.
 
-			// Title Bar.
+			// Navigation Button.
 				$(
-					'<div id="titleBar">' +
+					'<div id="navButton">' +
 						'<a href="#navPanel" class="toggle"></a>' +
-						'<span class="title">' + $('#logo').html() + '</span>' +
 					'</div>'
 				)
 					.appendTo($body);
@@ -56,6 +81,7 @@
 						'<nav>' +
 							$('#nav').navList() +
 						'</nav>' +
+						'<a href="#navPanel" class="close"></a>' +
 					'</div>'
 				)
 					.appendTo($body)
@@ -65,15 +91,40 @@
 						hideOnSwipe: true,
 						resetScroll: true,
 						resetForms: true,
-						side: 'left',
-						target: $body,
-						visibleClass: 'navPanel-visible'
+						side: 'left'
+						//target: $body,
+						//visibleClass: 'navPanel-visible'
 					});
 
-			// Fix: Remove navPanel transitions on WP<10 (poor/buggy performance).
+			// Fix: Remove transitions on WP<10 (poor/buggy performance).
 				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
-					$('#titleBar, #navPanel, #page-wrapper')
+					$('#navPanel')
 						.css('transition', 'none');
+
+		// Spotlights.
+			$('.spotlight')
+				.each(function() {
+
+					var	$this = $(this),
+						$image = $this.find('.image'),
+						$img = $image.find('img'),
+						x;
+
+					// No image? Skip.
+						if ($image.length == 0)
+							return;
+
+					// Assign image.
+						$image.css('background-image', 'url(' + $img.attr('src') + ')');
+
+					// Set background position.
+						if (x = $img.data('position'))
+							$image.css('background-position', x);
+
+					// Hide <img>.
+						$img.hide();
+
+				});
 
 	});
 

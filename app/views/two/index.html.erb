@@ -19,6 +19,6 @@
       <td><%= store.store_number %></td>
       <td><%= store.num_bales %></td>
       <td><%= store.total_weight %></td>
-      <td><%= ((store.total_weight / (store.square_feet * 0.1)) / 125.26170731707317 ) %></td></tr>
+      <td><%= ((((store.total_weight / (store.square_feet * 0.1)) / 125.26170731707317 )) * 100).to_i %></td></tr>
     <% end %>
 </table>

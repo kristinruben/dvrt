@@ -19,4 +19,6 @@
 //= require main
 //= require d3
 //= require c3
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .

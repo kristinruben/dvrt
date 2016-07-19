@@ -12,12 +12,11 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
- *= require font-awesome.min
  *= require ie8
  *= require ie9
  *= require main
  *= require c3
+
 
 
  */
@@ -62,4 +61,55 @@ body {
   height: 75px;	/* Gets overriden by D3-assigned height below */
   margin-right: 2px;
   background-color: teal;
+}
+
+.giant {
+  color: #0091B4;
+  font-size: 175px;
+  font-weight: bold;
+}
+
+.giant-text {
+  color: #5E5E5E;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+
+.date {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.rectangle {
+  font-size: 175px;
+  font-weight: bold;
+  color: #0091B4;
+  line-height: 80%;
+}
+
+h1 {
+  line-height: 125%;
+}
+
+.myBarChart {
+  height: 200px;
+  width: 100px;
+}
+
+.myBarChart2 {
+  height: 200px;
+  width: 100px;
 }
